@@ -1,0 +1,32 @@
+Velmora assistant | threshold 0.3 | 35 answerable + 5 unanswerable questions
+recall@1: 80.0%   recall@3: 88.6%   recall@5: 91.4%   (answerable only)
+correct answers (answerable):          28/35 = 80.0%
+  wrong but confident:                 1/35
+  refused by mistake:                  6/35
+unanswerable correctly refused:        5/5
+
+What the 'I don't know' threshold does (same answers, different cut-off):
+  threshold  correct  wrong_confident  refused_by_mistake  unanswerable_refused
+       0.00       29                6                   0                     0
+       0.05       29                6                   0                     1
+       0.10       29                6                   0                     1
+       0.15       29                4                   2                     1
+       0.20       29                2                   4                     1
+       0.25       29                1                   5                     3
+       0.30       28                1                   6                     5
+       0.35       28                1                   6                     5
+       0.40       28                1                   6                     5
+       0.45       28                1                   6                     5
+       0.50       28                1                   6                     5
+       0.55       28                1                   6                     5
+       0.60       27                1                   7                     5
+       0.65       27                1                   7                     5
+       0.70       26                1                   8                     5
+
+5-fold cross-validation of the threshold choice (chosen on 4/5 of the questions, applied to the other 1/5):
+  thresholds chosen: [0.55, 0.55, 0.55, 0.65, 0.55]
+  held-out totals: correct 27/35, wrong confident 1, refused by mistake 7, unanswerable refused 5/5
+
+judge vs manual review (29 answers reviewed): agree 29, judge too generous 0, judge too strict 0; correct after review: 28/29
+
+per-question results: /home/claude/w/velmora-assistant-final/results/results.jsonl
